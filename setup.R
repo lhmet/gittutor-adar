@@ -1,42 +1,43 @@
 
-
-
-
 # instrucoes de configuracao do github
 # https://usethis.r-lib.org/articles/usethis-setup.html
 
 
 # instalar o pacote usethis
-# install.packages("usethis")
+# pre-requisitos apt install libgit2-dev libx11-dev
+# se não tiver o pak instalado
+# install.packages("pak")
+pak::pak("usethis")
+pak::pak("devtools")
 
 
-# configurando usuario e e-mail do github
-usethis::edit_r_profile()
+# COMO CONFIGURAR O GIT NO SEU DESKTOP
+# https://happygitwithr.com/https-pat.html
 
-# verificar configuracoes do projeto
-usethis::proj_sitrep()
+# criar um token 
+library(usethis) ## or library(devtools)
+
+use_git_config(user.name = "lhmet", user.email = "lhmet@ufsm.br")
+
+# gerar personal token
+usethis::create_github_token()
+# token 1035: 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
+
+# salvar token
+gitcreds::gitcreds_set()
 
 # verificar configuracoes do git
-usethis::git_sitrep()
+git_sitrep()
 
 # adicionar arquivos a serem ignorados por default
 usethis::git_vaccinate()
 
 
-library(usethis) 
-use_git_config(user.name = "lhmet", user.email = "lhmet@ufsm.br")
-
-
-# check by running a git situation-report: 
-#   - your user.name and user.email should appear in global Git config 
-git_sitrep()
-
-
-# gerar personal token
-usethis::create_github_token()
-
-# salvar token
-gitcreds::gitcreds_set()
+# 1. NO REPOSITORIO DO GITHUB TIVEMOS QUE ALTERAR O NOME DO DIRETORIO BASE
+# DE MASTER PARA MAIN,
+# 2. TAMBEM TIVEMOS QUE ALTERAR AS REGRASDE PROTECAO DOS RAMOS
+# DESABILITANDO AS REGRAS DE PROTECAO DOS BRANCHS
+# REF: https://github.com/orgs/community/discussions/158212
 
 
 
