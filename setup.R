@@ -21,7 +21,7 @@ use_git_config(user.name = "lhmet", user.email = "lhmet@ufsm.br")
 
 # gerar personal token
 usethis::create_github_token()
-# token 1035: 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
+
 
 # salvar token
 gitcreds::gitcreds_set()
