@@ -36,6 +36,7 @@ usethis::git_vaccinate()
 # DE MASTER PARA MAIN,
 # 2. TAMBEM TIVEMOS QUE ALTERAR AS REGRASDE PROTECAO DOS RAMOS
 # DESABILITANDO AS REGRAS DE PROTECAO DOS BRANCHS
+
 # REF: https://github.com/orgs/community/discussions/158212
 
 
